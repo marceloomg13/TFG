@@ -36,20 +36,20 @@ class Level:
 
 		self.animation_player = AnimationPlayer()
 
-		self.gameover_sound = pygame.mixer.Sound('../../../audio/gameover.wav')
+		self.gameover_sound = pygame.mixer.Sound('../audio/gameover.wav')
 		self.gameover_sound.set_volume(0.5)
 		
 
 	def create_map(self):
 		layouts = {
-			'boundary': import_csv_layout('../../../map/Colisiones.csv'),
-			'grass': import_csv_layout('../../../map/Hierba.csv'),
-			'object': import_csv_layout('../../../map/Objetos.csv'),
-			'entities': import_csv_layout('../../../map/Entidades.csv')
+			'boundary': import_csv_layout('../map/Colisiones.csv'),
+			'grass': import_csv_layout('../map/Hierba.csv'),
+			'object': import_csv_layout('../map/Objetos.csv'),
+			'entities': import_csv_layout('../map/Entidades.csv')
 		}
 		graphics = {
-			'grass': import_folder('../../../graphics/Grass'),
-			'objects': import_folder('../../../graphics/objects')
+			'grass': import_folder('../graphics/Grass'),
+			'objects': import_folder('../graphics/objects')
 		}
 
 		for style,layout in layouts.items():
@@ -180,7 +180,7 @@ class YSortCameraGroup(pygame.sprite.Group):
 		self.offset = pygame.math.Vector2()
 
 		
-		self.floor_surf = pygame.image.load('../../../graphics/tilemap/TestGround.png').convert()
+		self.floor_surf = pygame.image.load('../graphics/tilemap/TestGround.png').convert()
 		self.floor_rect = self.floor_surf.get_rect(topleft = (0,0))
 
 	def custom_draw(self,player):
